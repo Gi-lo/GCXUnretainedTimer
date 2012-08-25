@@ -12,8 +12,8 @@
 		659B968F15E8A3BD00A3422B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B968E15E8A3BD00A3422B /* CoreGraphics.framework */; };
 		659B969715E8A3BD00A3422B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B969615E8A3BD00A3422B /* main.m */; };
 		659B969B15E8A3BD00A3422B /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B969A15E8A3BD00A3422B /* CKAppDelegate.m */; };
-		659B96A415E8A3E700A3422B /* CKUnretainedTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96A315E8A3E700A3422B /* CKUnretainedTimer.m */; };
 		659B96A715E8A4BC00A3422B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96A615E8A4BC00A3422B /* TestViewController.m */; };
+		659B96AB15E8A82C00A3422B /* CKUnretainedTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +26,10 @@
 		659B969815E8A3BD00A3422B /* CKUnretainedTimerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKUnretainedTimerDemo-Prefix.pch"; sourceTree = "<group>"; };
 		659B969915E8A3BD00A3422B /* CKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKAppDelegate.h; sourceTree = "<group>"; };
 		659B969A15E8A3BD00A3422B /* CKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
-		659B96A215E8A3E700A3422B /* CKUnretainedTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUnretainedTimer.h; sourceTree = "<group>"; };
-		659B96A315E8A3E700A3422B /* CKUnretainedTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUnretainedTimer.m; sourceTree = "<group>"; };
 		659B96A515E8A4BC00A3422B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		659B96A615E8A4BC00A3422B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		659B96A915E8A82C00A3422B /* CKUnretainedTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUnretainedTimer.h; sourceTree = "<group>"; };
+		659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUnretainedTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 		659B967B15E8A3BD00A3422B = {
 			isa = PBXGroup;
 			children = (
-				659B96A115E8A3DA00A3422B /* CKUnretainedTimer */,
+				659B96A815E8A82C00A3422B /* CKUnretainedTimer */,
 				659B969015E8A3BD00A3422B /* CKUnretainedTimerDemo */,
 				659B968915E8A3BD00A3422B /* Frameworks */,
 				659B968715E8A3BD00A3422B /* Products */,
@@ -96,13 +96,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		659B96A115E8A3DA00A3422B /* CKUnretainedTimer */ = {
+		659B96A815E8A82C00A3422B /* CKUnretainedTimer */ = {
 			isa = PBXGroup;
 			children = (
-				659B96A215E8A3E700A3422B /* CKUnretainedTimer.h */,
-				659B96A315E8A3E700A3422B /* CKUnretainedTimer.m */,
+				659B96A915E8A82C00A3422B /* CKUnretainedTimer.h */,
+				659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */,
 			);
-			path = CKUnretainedTimer;
+			name = CKUnretainedTimer;
+			path = ../CKUnretainedTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +170,8 @@
 			files = (
 				659B969715E8A3BD00A3422B /* main.m in Sources */,
 				659B969B15E8A3BD00A3422B /* CKAppDelegate.m in Sources */,
-				659B96A415E8A3E700A3422B /* CKUnretainedTimer.m in Sources */,
 				659B96A715E8A4BC00A3422B /* TestViewController.m in Sources */,
+				659B96AB15E8A82C00A3422B /* CKUnretainedTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
