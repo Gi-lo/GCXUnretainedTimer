@@ -7,29 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65678ED0167364BA00779AE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65678ECF167364BA00779AE7 /* Default-568h@2x.png */; };
 		659B968B15E8A3BD00A3422B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B968A15E8A3BD00A3422B /* UIKit.framework */; };
 		659B968D15E8A3BD00A3422B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B968C15E8A3BD00A3422B /* Foundation.framework */; };
 		659B968F15E8A3BD00A3422B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B968E15E8A3BD00A3422B /* CoreGraphics.framework */; };
 		659B969715E8A3BD00A3422B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B969615E8A3BD00A3422B /* main.m */; };
-		659B969B15E8A3BD00A3422B /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B969A15E8A3BD00A3422B /* CKAppDelegate.m */; };
+		659B969B15E8A3BD00A3422B /* GCXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B969A15E8A3BD00A3422B /* GCXAppDelegate.m */; };
 		659B96A715E8A4BC00A3422B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96A615E8A4BC00A3422B /* TestViewController.m */; };
-		659B96AB15E8A82C00A3422B /* CKUnretainedTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */; };
+		659B96AB15E8A82C00A3422B /* GCXUnretainedTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B96AA15E8A82C00A3422B /* GCXUnretainedTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		659B968615E8A3BD00A3422B /* CKUnretainedTimerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKUnretainedTimerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65678ECF167364BA00779AE7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		659B968615E8A3BD00A3422B /* GCXUnretainedTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCXUnretainedTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659B968A15E8A3BD00A3422B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		659B968C15E8A3BD00A3422B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		659B968E15E8A3BD00A3422B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		659B969215E8A3BD00A3422B /* CKUnretainedTimerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CKUnretainedTimerDemo-Info.plist"; sourceTree = "<group>"; };
+		659B969215E8A3BD00A3422B /* GCXUnretainedTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCXUnretainedTimer-Info.plist"; sourceTree = "<group>"; };
 		659B969615E8A3BD00A3422B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		659B969815E8A3BD00A3422B /* CKUnretainedTimerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKUnretainedTimerDemo-Prefix.pch"; sourceTree = "<group>"; };
-		659B969915E8A3BD00A3422B /* CKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKAppDelegate.h; sourceTree = "<group>"; };
-		659B969A15E8A3BD00A3422B /* CKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
+		659B969815E8A3BD00A3422B /* GCXUnretainedTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCXUnretainedTimer-Prefix.pch"; sourceTree = "<group>"; };
+		659B969915E8A3BD00A3422B /* GCXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCXAppDelegate.h; sourceTree = "<group>"; };
+		659B969A15E8A3BD00A3422B /* GCXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCXAppDelegate.m; sourceTree = "<group>"; };
 		659B96A515E8A4BC00A3422B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		659B96A615E8A4BC00A3422B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		659B96A915E8A82C00A3422B /* CKUnretainedTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUnretainedTimer.h; sourceTree = "<group>"; };
-		659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUnretainedTimer.m; sourceTree = "<group>"; };
+		659B96A915E8A82C00A3422B /* GCXUnretainedTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXUnretainedTimer.h; sourceTree = "<group>"; };
+		659B96AA15E8A82C00A3422B /* GCXUnretainedTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXUnretainedTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +51,9 @@
 		659B967B15E8A3BD00A3422B = {
 			isa = PBXGroup;
 			children = (
-				659B96A815E8A82C00A3422B /* CKUnretainedTimer */,
-				659B969015E8A3BD00A3422B /* CKUnretainedTimerDemo */,
+				65678ECF167364BA00779AE7 /* Default-568h@2x.png */,
+				659B96A815E8A82C00A3422B /* GCXUnretainedTimer */,
+				659B969015E8A3BD00A3422B /* GCXUnretainedTimerDemo */,
 				659B968915E8A3BD00A3422B /* Frameworks */,
 				659B968715E8A3BD00A3422B /* Products */,
 			);
@@ -59,7 +62,7 @@
 		659B968715E8A3BD00A3422B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				659B968615E8A3BD00A3422B /* CKUnretainedTimerDemo.app */,
+				659B968615E8A3BD00A3422B /* GCXUnretainedTimer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,44 +77,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		659B969015E8A3BD00A3422B /* CKUnretainedTimerDemo */ = {
+		659B969015E8A3BD00A3422B /* GCXUnretainedTimerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				659B969915E8A3BD00A3422B /* CKAppDelegate.h */,
-				659B969A15E8A3BD00A3422B /* CKAppDelegate.m */,
+				659B969915E8A3BD00A3422B /* GCXAppDelegate.h */,
+				659B969A15E8A3BD00A3422B /* GCXAppDelegate.m */,
 				659B96A515E8A4BC00A3422B /* TestViewController.h */,
 				659B96A615E8A4BC00A3422B /* TestViewController.m */,
 				659B969115E8A3BD00A3422B /* Supporting Files */,
 			);
+			name = GCXUnretainedTimerDemo;
 			path = CKUnretainedTimerDemo;
 			sourceTree = "<group>";
 		};
 		659B969115E8A3BD00A3422B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				659B969215E8A3BD00A3422B /* CKUnretainedTimerDemo-Info.plist */,
+				659B969215E8A3BD00A3422B /* GCXUnretainedTimer-Info.plist */,
 				659B969615E8A3BD00A3422B /* main.m */,
-				659B969815E8A3BD00A3422B /* CKUnretainedTimerDemo-Prefix.pch */,
+				659B969815E8A3BD00A3422B /* GCXUnretainedTimer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		659B96A815E8A82C00A3422B /* CKUnretainedTimer */ = {
+		659B96A815E8A82C00A3422B /* GCXUnretainedTimer */ = {
 			isa = PBXGroup;
 			children = (
-				659B96A915E8A82C00A3422B /* CKUnretainedTimer.h */,
-				659B96AA15E8A82C00A3422B /* CKUnretainedTimer.m */,
+				659B96A915E8A82C00A3422B /* GCXUnretainedTimer.h */,
+				659B96AA15E8A82C00A3422B /* GCXUnretainedTimer.m */,
 			);
-			name = CKUnretainedTimer;
+			name = GCXUnretainedTimer;
 			path = ../CKUnretainedTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		659B968515E8A3BD00A3422B /* CKUnretainedTimerDemo */ = {
+		659B968515E8A3BD00A3422B /* GCXUnretainedTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 659B969E15E8A3BD00A3422B /* Build configuration list for PBXNativeTarget "CKUnretainedTimerDemo" */;
+			buildConfigurationList = 659B969E15E8A3BD00A3422B /* Build configuration list for PBXNativeTarget "GCXUnretainedTimer" */;
 			buildPhases = (
 				659B968215E8A3BD00A3422B /* Sources */,
 				659B968315E8A3BD00A3422B /* Frameworks */,
@@ -121,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = CKUnretainedTimerDemo;
+			name = GCXUnretainedTimer;
 			productName = CKUnretainedTimerDemo;
-			productReference = 659B968615E8A3BD00A3422B /* CKUnretainedTimerDemo.app */;
+			productReference = 659B968615E8A3BD00A3422B /* GCXUnretainedTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,7 +140,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Giulio Petek";
 			};
-			buildConfigurationList = 659B968015E8A3BD00A3422B /* Build configuration list for PBXProject "CKUnretainedTimerDemo" */;
+			buildConfigurationList = 659B968015E8A3BD00A3422B /* Build configuration list for PBXProject "GCXUnretainedTimer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -148,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				659B968515E8A3BD00A3422B /* CKUnretainedTimerDemo */,
+				659B968515E8A3BD00A3422B /* GCXUnretainedTimer */,
 			);
 		};
 /* End PBXProject section */
@@ -158,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65678ED0167364BA00779AE7 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,9 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				659B969715E8A3BD00A3422B /* main.m in Sources */,
-				659B969B15E8A3BD00A3422B /* CKAppDelegate.m in Sources */,
+				659B969B15E8A3BD00A3422B /* GCXAppDelegate.m in Sources */,
 				659B96A715E8A4BC00A3422B /* TestViewController.m in Sources */,
-				659B96AB15E8A82C00A3422B /* CKUnretainedTimer.m in Sources */,
+				659B96AB15E8A82C00A3422B /* GCXUnretainedTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,9 +236,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CKUnretainedTimerDemo/CKUnretainedTimerDemo-Prefix.pch";
-				INFOPLIST_FILE = "CKUnretainedTimerDemo/CKUnretainedTimerDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CKUnretainedTimerDemo/GCXUnretainedTimer-Prefix.pch";
+				INFOPLIST_FILE = "CKUnretainedTimerDemo/GCXUnretainedTimer-Info.plist";
+				PRODUCT_NAME = GCXUnretainedTimer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -242,9 +247,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CKUnretainedTimerDemo/CKUnretainedTimerDemo-Prefix.pch";
-				INFOPLIST_FILE = "CKUnretainedTimerDemo/CKUnretainedTimerDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CKUnretainedTimerDemo/GCXUnretainedTimer-Prefix.pch";
+				INFOPLIST_FILE = "CKUnretainedTimerDemo/GCXUnretainedTimer-Info.plist";
+				PRODUCT_NAME = GCXUnretainedTimer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -252,7 +257,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		659B968015E8A3BD00A3422B /* Build configuration list for PBXProject "CKUnretainedTimerDemo" */ = {
+		659B968015E8A3BD00A3422B /* Build configuration list for PBXProject "GCXUnretainedTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				659B969C15E8A3BD00A3422B /* Debug */,
@@ -261,13 +266,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		659B969E15E8A3BD00A3422B /* Build configuration list for PBXNativeTarget "CKUnretainedTimerDemo" */ = {
+		659B969E15E8A3BD00A3422B /* Build configuration list for PBXNativeTarget "GCXUnretainedTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				659B969F15E8A3BD00A3422B /* Debug */,
 				659B96A015E8A3BD00A3422B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

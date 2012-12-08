@@ -1,7 +1,9 @@
 /* ----------------------------------------------------------------------
- CKUnretainedTimer.h
+ 
+ GCXUnretainedTimer.m
+ 
  Copyright 2012 Giulio Petek. All rights reserved.
-
+ 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -19,76 +21,77 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
+ 
  ---------------------------------------------------------------------- */
 
-#import "CKUnretainedTimer.h"
+#import "GCXUnretainedTimer.h"
 #include <objc/objc-runtime.h>
 
 /* ----------------------------------------------------------------------
- @interface CKUnretainedTimer ()
+ @interface GCXUnretainedTimer ()
  ---------------------------------------------------------------------- */
 
-@interface CKUnretainedTimer ()
+@interface GCXUnretainedTimer ()
 
 @property (nonatomic, unsafe_unretained, readwrite) dispatch_source_t _timerSource;
 @property (nonatomic, unsafe_unretained, getter = isValid, readwrite) BOOL isValid;
 @property (nonatomic, unsafe_unretained, readwrite) id userInfo;
 
-- (id)_initWithTimeinterval:(NSTimeInterval)interval
-                      block:(CKUnretainedTimerBlock)block
-                   userInfo:(id)userInfo
-                    repeats:(BOOL)repeats
-         startAutomatically:(BOOL)startAutomatically;
+- (GCXUnretainedTimer *)_initWithTimeinterval:(NSTimeInterval)interval
+                                        block:(GCXUnretainedTimerBlock)block
+                                     userInfo:(id)userInfo
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically;
 
 @end
 
 /* ----------------------------------------------------------------------
- @implementation CKUnretainedTimer
+ @implementation GCXUnretainedTimer
  ---------------------------------------------------------------------- */
 
-@implementation CKUnretainedTimer
-@synthesize _timerSource = __timerSource;
-@synthesize isValid = _isValid;
-@synthesize userInfo = _userInfo;
+@implementation GCXUnretainedTimer
 
 #pragma mark Init
 
-+ (CKUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
-                                       block:(CKUnretainedTimerBlock)block
-                                    userInfo:(id)userInfo
-                                     repeats:(BOOL)repeats
-                          startAutomatically:(BOOL)startAutomatically {
-    return [[CKUnretainedTimer alloc] _initWithTimeinterval:interval
++ (GCXUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
+                                        block:(GCXUnretainedTimerBlock)block
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically {
+    return [[GCXUnretainedTimer alloc] _initWithTimeinterval:interval
                                                       block:block
-                                                   userInfo:userInfo
+                                                   userInfo:nil
                                                     repeats:repeats
                                          startAutomatically:startAutomatically];
 }
 
-+ (CKUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
-                                      target:(id)target
-                                    selector:(SEL)selector
-                                    userInfo:(id)userInfo
-                                     repeats:(BOOL)repeats
-                          startAutomatically:(BOOL)startAutomatically {
++ (GCXUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
+                                       target:(id)target
+                                     selector:(SEL)selector
+                                     userInfo:(id)userInfo
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically {
     
     __weak id weakTarget = target;
-    CKUnretainedTimerBlock timerBlock = ^(CKUnretainedTimer *timer){
-        objc_msgSend(weakTarget, selector, timer);
-    };
+    GCXUnretainedTimerBlock timerBlock = ^(GCXUnretainedTimer *timer){
+        __strong id strongTarget = weakTarget;
 
-    return [self timerWithTimeInterval:interval
-                                 block:timerBlock
-                              userInfo:userInfo
-                               repeats:repeats
-                    startAutomatically:startAutomatically];
+        objc_msgSend(strongTarget, selector, timer);
+    };
+    
+    GCXUnretainedTimer *timer = [self timerWithTimeInterval:interval
+                                                      block:timerBlock
+                                                    repeats:repeats
+                                         startAutomatically:startAutomatically];
+    timer.userInfo = userInfo;
+    
+    return timer;
 }
 
-- (id)_initWithTimeinterval:(NSTimeInterval)interval
-                      block:(CKUnretainedTimerBlock)block
-                   userInfo:(id)userInfo
-                    repeats:(BOOL)repeats
-         startAutomatically:(BOOL)startAutomatically {
+- (GCXUnretainedTimer *)_initWithTimeinterval:(NSTimeInterval)interval
+                                        block:(GCXUnretainedTimerBlock)block
+                                     userInfo:(id)userInfo
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically {
     if ((self = [super init])) {
         NSParameterAssert(block);
         
@@ -99,19 +102,20 @@
             dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, timeInterval);
             dispatch_source_set_timer(__timerSource, start, timeInterval, 0);
             
-            __weak CKUnretainedTimer *weakSelf = self;
             dispatch_source_set_event_handler(__timerSource, ^{
-                block(weakSelf);
-
-                if (!repeats)
-                    dispatch_source_cancel(weakSelf._timerSource);
+                block(self);
+                
+                if (!repeats) {
+                    dispatch_source_cancel(self._timerSource);
+                }
             });
             
             _isValid = YES;
             _userInfo = userInfo;
-
-            if (startAutomatically)
+            
+            if (startAutomatically) {
                 [self fire];
+            }
         }
     }
     
@@ -121,11 +125,18 @@
 #pragma mark Start/Stop timer
 
 - (void)fire {
-    NSParameterAssert(self.isValid);
+    if (!self.isValid) {
+        return;
+    }
+    
     dispatch_resume(self._timerSource);
 }
 
 - (void)invalidate {
+    if (!self.isValid) {
+        return;
+    }
+    
     dispatch_source_cancel(__timerSource);
     self.isValid = NO;
 }

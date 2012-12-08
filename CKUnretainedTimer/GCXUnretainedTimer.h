@@ -1,5 +1,7 @@
 /* ----------------------------------------------------------------------
- main.m
+ 
+ GCXUnretainedTimer.h
+ 
  Copyright 2012 Giulio Petek. All rights reserved.
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,13 +21,30 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
+ 
  ---------------------------------------------------------------------- */
 
-#import <UIKit/UIKit.h>
-#import "CKAppDelegate.h"
+@class GCXUnretainedTimer;
+typedef void (^GCXUnretainedTimerBlock)(GCXUnretainedTimer *timer);
 
-int main(int argc, char *argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CKAppDelegate class]));
-    }
-}
+@interface GCXUnretainedTimer : NSObject
+
+@property (nonatomic, unsafe_unretained, getter = isValid, readonly) BOOL isValid;
+@property (nonatomic, unsafe_unretained, readonly) id userInfo;
+
++ (GCXUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
+                                        block:(GCXUnretainedTimerBlock)block
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically;
+
++ (GCXUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
+                                       target:(id)target
+                                     selector:(SEL)selector
+                                     userInfo:(id)userInfo
+                                      repeats:(BOOL)repeats
+                           startAutomatically:(BOOL)startAutomatically;
+
+- (void)fire;
+- (void)invalidate;
+
+@end

@@ -1,5 +1,7 @@
 /* ----------------------------------------------------------------------
- CKUnretainedTimer.h
+ 
+ TestViewController.h
+ 
  Copyright 2012 Giulio Petek. All rights reserved.
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,32 +21,8 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
+ 
  ---------------------------------------------------------------------- */
 
-
-@class CKUnretainedTimer;
-typedef void (^CKUnretainedTimerBlock)(CKUnretainedTimer *timer);
-
-
-@interface CKUnretainedTimer : NSObject
-
-@property (nonatomic, unsafe_unretained, getter = isValid, readonly) BOOL isValid;
-@property (nonatomic, unsafe_unretained, readonly) id userInfo;
-
-+ (CKUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
-                                       block:(CKUnretainedTimerBlock)block
-                                    userInfo:(id)userInfo
-                                     repeats:(BOOL)repeats
-                          startAutomatically:(BOOL)startAutomatically;
-
-+ (CKUnretainedTimer *)timerWithTimeInterval:(NSTimeInterval)interval
-                                      target:(id)target
-                                    selector:(SEL)selector
-                                    userInfo:(id)userInfo
-                                     repeats:(BOOL)repeats
-                          startAutomatically:(BOOL)startAutomatically;
-
-- (void)fire;
-- (void)invalidate;
-
+@interface TestViewController : UIViewController
 @end

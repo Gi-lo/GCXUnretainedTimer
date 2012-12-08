@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------
- CKAppDelegate.m
+ main.m
  Copyright 2012 Giulio Petek. All rights reserved.
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,27 +21,11 @@
  THE SOFTWARE.
  ---------------------------------------------------------------------- */
 
-#import "CKAppDelegate.h"
-#import "TestViewController.h"
+#import <UIKit/UIKit.h>
+#import "GCXAppDelegate.h"
 
-/* ----------------------------------------------------------------------
- @implementation CKAppDelegate
- ---------------------------------------------------------------------- */
-
-@implementation CKAppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    UIViewController *masterViewController = [[UIViewController alloc] init];
-    TestViewController *testViewController = [[TestViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-    [navigationController pushViewController:testViewController animated:YES];
-    self.window.rootViewController = navigationController;
-    
-    return YES;
+int main(int argc, char *argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([GCXAppDelegate class]));
+    }
 }
-
-@end
